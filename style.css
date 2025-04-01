@@ -1,3 +1,83 @@
 body {
-    background-color: peachpuff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #fffbdb;
+    color: #30362f;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    text-align: center;
+}
+
+.heroish {
+    margin: 32px;
+}
+
+.container {
+    background-color: #b8e986;
+    margin: 32px 35%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container p{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0px;
+}
+
+.container.difficulty #difficulty{
+    font-weight: bolder;
+}
+
+.game {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #e2f8cb;
+    margin: 0;
+    padding: 16px;
+    display: flex;
+    gap: 64px;
+    justify-content: center;
+    align-items: center;
+}
+
+.game span{
+    font-size: 36px;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.choices button{
+    border: 4px dotted #e94e77;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+button.player-chosen{
+    background-color: #5ec987;
+}
+
+button.cpu-chosen{
+    border: 4px dotted #5ec987;
+    background-color: #e94e77;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    overflow: hidden;
+    border: 6px dashed #e94e77;
+    border-radius: 16px;
+    background-color: #b8e986;
+    color: #e94e77;
+    margin: 16px 10%;
+    padding: 16px 0;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 16px;
 }

@@ -7,6 +7,33 @@
 </head>
 <body>
   <script src="javascript.js"></script>
-  Teste.
+  <div class="heroish">
+    <h1>Rock, Paper, Scissors</h1>
+    <p>Click on your choice, and our advanced GenAI systems will <strong>immediately</strong> make a move and try to beat you.</p>
+    <p>To help you beat this genius GenAI LLM VibeRPS'ing agent colossus, you can adjust the difficulty. Do not set it to zero or the AI will get mad and steal your job during Judgement Day.</p>
+    <div class="container">
+      <input type="range" min="1" max="100" value="10" class="slider" id="myRange">
+      <p>Difficulty Level: <span id="difficulty">10</span>/100</p>
+    </div>
+  </div>
+
+  <div class="game">
+    <div class="choices player">
+      PLAYER
+      <button class="rock"><img src="images/rock.png" width="128"></button>
+      <button class="paper player-chosen" ><img src="images/paper.png" width="128"></button>
+      <button class="scissors"><img src="images/scissors.png" width="128"></button>
+    </div>
+
+    <span>vs.</span>
+
+    <div class="choices computer">
+      CPU
+      <button class="rock"><img src="images/rock.png" width="128"></button>
+      <button class="paper cpu-chosen"><img src="images/paper.png" width="128"></button>
+      <button class="scissors"><img src="images/scissors.png" width="128"></button>
+    </div>
+  </div>
+  <h2 id="message">Make your move!</h2>
 </body>
 </html>
