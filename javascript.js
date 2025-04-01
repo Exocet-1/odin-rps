@@ -20,9 +20,11 @@ const diffSlider = document.querySelector('#diff-range');
 const diffSliderReadout = document.querySelector('#difficulty');
 
 let playerChoice = 1;
-let difficultyLevel = 0.1;
-
+let difficultyLevel = diffSlider.value / 100;
 let btnSemaphore = false;
+
+diffSliderReadout.textContent = diffSlider.value;
+
 
 diffSlider.addEventListener('input', () => {
     if (btnSemaphore) return;

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Banana</title>
+  <title>Rock Paper Scissors</title>
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
@@ -11,7 +11,7 @@
     <p>Click on your choice, and our advanced GenAI systems will <strong>immediately</strong> make a move and try to beat you.</p>
     <p>To help you beat this genius GenAI LLM VibeRPS'ing agent colossus, you can adjust the difficulty. Do not set it to zero or the AI will get mad and steal your job during Judgement Day.</p>
     <div class="container">
-      <input type="range" min="0" max="100" value="10" id="diff-range">
+      <input type="range" min="0" max="100" value="40" id="diff-range">
       <p>Difficulty Level: <span id="difficulty">10</span>/100</p>
     </div>
   </div>
@@ -20,7 +20,7 @@
     <div class="choices player">
       PLAYER
       <button class="rock"><img src="images/rock.png" width="128"></button>
-      <button class="paper player-chosen" ><img src="images/paper.png" width="128"></button>
+      <button class="paper" ><img src="images/paper.png" width="128"></button>
       <button class="scissors"><img src="images/scissors.png" width="128"></button>
     </div>
 
@@ -29,7 +29,7 @@
     <div class="choices computer">
       CPU
       <button class="rock"><img src="images/rock.png" width="128"></button>
-      <button class="paper cpu-chosen"><img src="images/paper.png" width="128"></button>
+      <button class="paper"><img src="images/paper.png" width="128"></button>
       <button class="scissors"><img src="images/scissors.png" width="128"></button>
     </div>
   </div>
