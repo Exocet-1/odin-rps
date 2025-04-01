@@ -1,4 +1,4 @@
-const THINKING_MSG = "MEGA AI 3000 now thinking...";
+const THINKING_MSG = "MEGA AI 3000 now thinking";
 const LOSE_MSGS = ['Terminated!', 'L O S E', 'Hasta la vista, baybee', 
     'Talk to the hand', '*robotic laughter noises*',
     '1. SERVE THE PUBLIC TRUST\n2. PROTECT THE INNOCENT\n3. UPHOLD THE LAW\n4. BEAT DUMB HUMANS AT R-P-S'];
@@ -12,17 +12,49 @@ const choiceMap = {'rock': 0, 'paper': 1, 'scissors': 2};
 
 const btns = document.querySelectorAll('div.choices button');
 const msg = document.querySelector('#message');
+const cursor = document.querySelector('#blinking-cursor');
 
 let playerChoice = 1;
 let difficultyLevel = 0.1;
 
+let btnSemaphore = false;
+
 btns.forEach(btn => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", async () => {
+        if (btnSemaphore) return;
+        btnSemaphore = true;
+
         let choice = choiceMap[btn.classList[0]];
-        setPlayerChoice(choice)
-        makeComputerChoose(choice);
+        setPlayerChoice(choice);
+        msg.classList.toggle("thinking");
+        result = await makeComputerChoose(choice);
+        msg.classList.toggle("thinking");
+        displayWinLoseQuote(choice, result);
+
+        btnSemaphore = false;
     });
 });
+
+function displayThinkingQuote(){}
+
+function displayWinLoseQuote(choice, result) {
+    msg.classList.remove("lost");
+    msg.classList.remove("won");
+    msg.classList.remove("draw");
+    if (choice == result) {
+        let i = Math.floor(Math.random() * DRAW_MSGS.length);
+        msg.textContent = DRAW_MSGS[i];
+        msg.classList.add("draw");
+    } else if (choice < result && choice + 2 != result || choice - 2 == result) {
+        let i = Math.floor(Math.random() * LOSE_MSGS.length);
+        msg.textContent = LOSE_MSGS[i];
+        msg.classList.add("lost");
+    } else {
+        let i = Math.floor(Math.random() * WIN_MSGS.length);
+        msg.textContent = WIN_MSGS[i];
+        msg.classList.add("won");
+    }
+}
 
 function setPlayerChoice(playerInput) {
     btns[0].classList.remove("player-chosen");
@@ -33,6 +65,8 @@ function setPlayerChoice(playerInput) {
 
 //Yeah, I know I'm jumping too far in relation to TOP content!
 async function makeComputerChoose(playerInput){
+    msg.textContent = THINKING_MSG;
+
     btns[3].classList.remove("cpu-chosen");
     btns[4].classList.remove("cpu-chosen");
     btns[5].classList.remove("cpu-chosen");

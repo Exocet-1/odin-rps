@@ -65,6 +65,14 @@ button.cpu-chosen{
     background-color: #e94e77;
 }
 
+#blinking-cursor {
+    animation: blink 0.5s infinite;
+}
+@keyframes blink {
+    0%, 50% { opacity: 0; }
+    51%, 100% { opacity: 1; }
+  }
+
 h1 {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
@@ -80,4 +88,17 @@ h1 {
 h2 {
     font-family: 'Courier New', Courier, monospace;
     padding: 16px;
+}
+
+span#message.lost {
+    color:#e94e77;
+}
+span#message.won {
+    color:#5ec987;
+}
+span#message.draw {
+    color: inherit;
+}
+span#message.thinking {
+    color:#e94e77;
 }
