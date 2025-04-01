@@ -45,6 +45,7 @@ body {
 }
 
 .choices {
+    font-size: 24pt;
     display: flex;
     flex-direction: column;
     gap: 16px;
